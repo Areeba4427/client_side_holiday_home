@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap');
+@import"https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
+:root {
+    --theme-colour: #f0ecca;
+    --section-color:#FFFFFF;
+    --text-colour: #735C1C;
+    --text-color-green: #DBAF36;
+    --background-color:#E7E7E0;
+    --text-color-green-lighter: #DBAF36;
+    --border-color: #ccc;;
+    --chakra-fonts-body: "Source Sans Pro", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+.required {
+    color: red;
+    margin-left: 5px;
+  }
+  
+body,
+html {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-colour);
+    
+}
+*, ::after, ::before {
+    border-color: var(--chakra-colors-gray-200);
+    word-wrap: break-word;
+}
+.body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight:600;
+    line-height: 0.7rem;
+    text-rendering: optimizeLegibility;
+    text-shadow: 0 0 1px transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: break-word;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://cdn.thinkific.com/13/20180205/7e57f4d425ca1d31db8380c97d3f6771.png);
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input, select {
+    width: calc(100% - 100px);
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    height: 45px;
+    padding-left:10px;
+    -moz-appearance: textfield;
+    color: var(--text-colour);
+    background-color: var(--theme-colour-darker);
+    border: 0.5px solid var(--border-color);
+
+}
+
+label {
+    width: auto;
+    color: var(--text-colour);
+    margin: 0;
+    padding: 8px 0px;
+line-height:30px;
+font-size: 16px;
+font-weight: 500;
+font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.header{
+    text-align: left;
+    width: 80%;
+   
+}
+.header span{
+    line-height: 20px;
+}
+h2
+{
+    font-size:32px;
+    line-height: 20px;
+}
+
+.header__logo {
+    padding:30px 40px;
+    line-height: 1;
+    
+}
+.header__logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+a {
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    transition: all 200ms ease;
+    color: #b28f3e;
+}
+.header__logo___2909e img {
+    max-height: none;
+    width: 15rem;
+    height: auto;
+}
+
+
+.property_calculator {
+    max-width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    position: relative;
+    margin: 50px auto;
+    padding: 0px 0px;
+    padding-bottom: 30px;
+}
+
+
+.patch_section{
+    top:0;
+    background-color: var(--section-color);
+    width: 100%;
+   border-bottom: 4px solid var(--text-color-green);
+}
+.parent_section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+.inner_section{
+    padding: 30px 60px;
+}
+.result_div {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    width: 60%;
+    margin: 50px 60px;
+    border: 1px solid var(--text-color-green-lighter);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add your desired shadow values here */
+     border-radius: 30px;
+    background-color: var(--section-color);
+   text-align: center;
+}
+
+  #go_back, #booking_button, #submit{
+    width: 100%;
+    background-color: var(--text-color-green); /* Button background color */
+    color: white; /* Button text color */
+    border: 1px solid var(--text-color-green);
+    border-radius: 0; /* Remove button border radius if needed */
+    cursor: pointer;
+    padding: 15px 30px; /* Adjust padding as needed */
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 8px;
+  }
+
+
+  #go_back{
+    margin-left: 0vw;
+  }
+  #booking_button:hover, #submit:hover{
+    background-color: var(--text-color-green-lighter); /* Change button color on hover */
+    transition: 1s ease-in-out;
+  }
+
+  /* Popup */
+  #app2{
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow-x: hidden;
+  }
+  
+  #dis2{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  
+.discp {
+    background-color: #fff;
+    width: calc(100% - 4em);
+    max-width: 90ch;
+    border-radius: 0.5em;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     padding: 30px 30px;
+  }
+  
+  form{
+    padding: 2vh 2vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+  }
+.upper-form-row{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+  .form-row{
+    padding: 10px 0px;
+ 
+  }
+  /* .form-row label {
+width: 30%;
+text-align: right;
+padding: 0px 10px;
+  } */
+  .form-row input{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+
+
+
+  .css-ebv3qm .tooltip-button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: 0;
+    /* margin-bottom: -0.05rem; */
+    cursor: pointer;
+    vertical-align: center;
+    color: #727272;
+   
+  }
+
+  .css-ebv3qm .tooltip-button {
+    padding: 0;
+    margin: 0 0 -0.05rem;
+    border: 0;
+    background: 0 center;
+    cursor: pointer;
+    color: #5e5e5e;
+  }
+  .css-ebv3qm p {
+    background: #333; 
+    color: #fff; 
+    font-size: 14px; 
+    font-weight: 500; 
+    border-radius: 5px;
+    padding: 10px; 
+    line-height: 15px;
+    position: absolute;
+    z-index: 3;
+    display: none;
+    max-width: 200px; 
+    text-align: center;
+    white-space: normal; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    transform: translateX(25%);
+    transition: opacity 0.5s ease; 
+  }
+  
+
+  [type="button"], [type="submit"], button {
+    --webkit-appearance: button;
+}
+
+svg:not(:host).svg-inline--fa,
+svg:not(:root).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.inl{
+    display: inline-block;
+}
+.css-17p4kgf {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    width: auto;
+    line-height: 1.2;
+    border-radius: var(--chakra-radii-md);
+    font-weight: var(--chakra-fontWeights-semibold);
+    transition-property: var(--chakra-transition-property-common);
+    transition-duration: var(--chakra-transition-duration-normal);
+    height: var(--chakra-sizes-10);
+    min-width: var(--chakra-sizes-10);
+    font-size: var(--chakra-fontSizes-md);
+    -webkit-padding-start: var(--chakra-space-4);
+    padding-inline-start: var(--chakra-space-4);
+    -webkit-padding-end: var(--chakra-space-4);
+    padding-inline-end: var(--chakra-space-4);
+    background: var(--chakra-colors-gray-100);
+    color: var(--chakra-colors-mg-base);
+  }
+
+.section {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px;
+    min-height: 100px;
+}
+
+
+/* slider */
+
+
+.result_one {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 60%;
+    margin: 30px 0px;
+    
+}
+
+.result_desc {
+    font-size: 18px;
+    line-height: 24px;
+    color: #999;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.fee {
+    display: inline-block;
+    font-size: 45px;
+    color: var(--text-color-green);
+line-height: 30px;
+}
+
+@media screen and (max-width:1870px){
+   
+    .section{
+        min-width:350px;
+    }
+    .header{
+        width:100%;
+    }
+}
+@media screen and (max-width:1600px){
+    .parent_section {
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .result_div{
+        min-height: 450px;
+        padding:20px 0px;
+        width:80%
+    }
+  
+    .result_one {
+        padding: 20px 0px;
+    }
+}
+
+
+@media screen and (max-width:1000px) {
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.inner_section {
+    margin: 30px 80px;
+}
+
+}
+
+@media screen and (max-width:880px) {
+    .section {
+        min-width: 350px;
+        margin:20px 0px;
+    }
+.row{
+    display: flex; 
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin:0px 0px;
+  
+}
+    input, select{
+        width: calc(100% - 150px);
+        outline: none;
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width:800px) {
+.fee{
+    font-size: 30px;
+}
+.upper-form-row{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.result_div {
+    min-height: 250px;
+}
+h2 {
+    font-size: 32px;
+    line-height: 35px;
+    text-align: center;
+}
+
+}
+
+@media screen and (max-width:650px) {
+    .property_calculator {
+        max-width: 80%;
+
+    }
+
+}
+
+@media screen and (max-width:520px) {
+    .fee {
+        font-size: 34px;
+    }
+
+    .result_desc {
+        font-size: 16px;
+    }
+.result_div{
+         margin: 0px 0px;
+}
+    .r1 {
+        margin: 20px 0px;
+    }
+    .property_calculator {
+        max-width: 90%;
+    }
+    .result_div {
+        width: 90%;
+    }
+    .section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 280px;
+    }
+    .header{
+        width: 100%;
+        text-align: center;
+    }
+    input, select {
+      
+        font-size: 18px;
+    }
+    .let_us_know{
+        line-height: 25px;
+        text-align: center;
+    font-size: 26px;
+    margin-top: 60px;
+    }
+    #go_back, #booking_button, #submit 
+ {   font-size: 16px;
+}
+label{
+    font-size: 12px;
+}
+#booking_button{
+    margin: 20px 0px;
+}
+select{
+    font-size: 14px;
+}
+.result_div {
+    min-height: 150px;
+}
+}
+
+
+@media screen and (max-width:360px) {
+    h2 {
+        font-size: 16px;
+       
+    }
+    .header span{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .header__logo___2909e img {
+        max-height: none;
+        width: 10rem;
+        height: auto;
+    }
+    .header__logo {
+        padding: 30px 10px;
+    }
+    .fee {
+        font-size: 30px;
+    }
+}

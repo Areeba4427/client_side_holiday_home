@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+      integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <title>Borsigliana Booking Aanvraag</title>
+  </head>
+
+  <body class="body">
+    <!-- Pop up section 1 - price breakdown  -->
+
+    <div id="app2" style="display: none">
+      <div id="dis2">
+        <div class="discp">
+          <form
+          name="bookingForm"
+          id="BookingForm"
+          action="https://ludoborsiglianaupdated.azurewebsites.net/client-request"
+          method="POST"
+          target="uploader_iframe"
+        >
+          <h3 class='let_us_know' style="text-align: center; font-size: 26px">Let us know who you are</h3>
+          <div class="upper-form-row">
+            <div class="form-row">
+              <label for="date">Current Date</label>
+              <input
+                type="text"
+                name="date"
+                value=""
+                placeholder="DD/MM/YYYY"
+                readonly="readonly"
+                id="date"
+              />
+            </div>
+            <div class="form-row">
+              <label for="name">Name<span class="required">*</span></label>
+              <input type="text" name="name" />
+            </div>
+          </div>
+        
+          <div class="upper-form-row">
+            <div class="form-row">
+              <label for="email">E-mail<span class="required">*</span></label>
+              <input type="email" name="email" />
+            </div>
+            <div class="form-row">
+              <label for="tel">Tel/Mobile<span class="required">*</span></label>
+              <input type="tel" name="tel" />
+            </div>
+          </div>
+        
+          <div class="upper-form-row">
+            <div class="form-row">
+              <label>Start Date</label>
+              <input type="text" id="start_date" name="start" readonly />
+            </div>
+        
+            <div class="form-row">
+              <label>End Date</label>
+              <input type="text" id="end_date" name="end" readonly />
+            </div>
+          </div>
+        
+          <div class="upper-form-row">
+            <div class="form-row">
+              <label>Number of Guests<span class="required">*</span></label>
+              <input type="number" id="guests" name="guests" />
+            </div>
+
+            <div class="form-row">
+              <label>Remarks/Questions</label>
+              <input type="text" id="remarks" name="remarks" />
+            </div>
+          </div>
+
+          <div class="upper-form-row">
+            <div class="form-row" style="display: none">
+              <label for="date">Serial Number<span class="required">*</span></label>
+              <input type="text" name="serial" id="serial" readonly />
+            </div>
+            <input
+              type="text"
+              name="status"
+              id="status"
+              style="visibility: hidden"
+            />
+          </div>
+          <div class="upper-form-row">
+            <button type="submit" id="submit">Submit Details</button>
+          </div>
+        </form>
+        
+          <iframe
+            id="uploader_iframe"
+            name="uploader_iframe"
+            style="display: none"
+          ></iframe>
+
+          <div style="display: none" id="success-message">
+            <p>
+              Your Request has been successfully submitted. We'll send update on your booking to the email address provided.
+            </p>
+            <button id="go_back" name="go_back">Go Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="property_calculator">
+      <div class="patch_section">
+        <section class="header__logo header__logo___2909e">
+          <a href="https://ibb.co/NTNPh3y"
+            ><img
+              src="https://i.ibb.co/3RFqXsC/Logo-Borsigliana-definitief-Logo-negatief-1280x544.png"
+              alt="Logo-Borsigliana-definitief-Logo-negatief-1280x544"
+          /></a>
+        </section>
+      </div>
+
+      <div class="parent_section">
+        <div class="inner_section">
+          <div class="header">
+            <h2>Borsigliana Booking Aanvraag</h2>
+            <span>Verstuur de aanvraag voor de gekozen periode,
+              de verhuurder contacteert u asap</span>
+          </div>
+          <div class="row">
+            <div class="section">
+              <div class="inl">
+                <div class="css-ebv3qm e1j6iris0">
+                  <label>Start datum</label>
+                  <button
+                    type="button"
+                    class="chakra-button tooltip-button css-17p4kgf"
+                    onmouseover="hover(1)"
+                    onmouseleave="dis(1)"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="question-circle"
+                      class="svg-inline--fa fa-question-circle"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <div>
+                    <p id="display1">
+                      Start datum (DD/MM/YYYY)
+                    </p>
+                  </div>
+                </div>
+              </div>
+        
+              <select id="period" class="numerical withoutdollar"></select>
+
+            </div>
+
+            <div class="section">
+              <div class="inl">
+                <div class="css-ebv3qm e1j6iris0">
+                  <label>Duur v/h verblijf</label>
+                  <button
+                    type="button"
+                    class="chakra-button tooltip-button css-17p4kgf"
+                    onmouseover="hover(2)"
+                    onmouseleave="dis(2)"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="question-circle"
+                      class="svg-inline--fa fa-question-circle"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <p id="display2">
+                    Duur van uw verblijf. Laagseizoen vanaf 3 nachten.
+                    Voor midden en hoogseizoen vanaf 1 week (van zat. tot zat.)                    
+                  </p>
+                </div>
+              </div>
+              <select id="duration" class="numerical withoutdollar">
+                <option value="1">Week</option>
+                <option value="2">3 Nachten</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="section">
+              <div class="inl">
+                <div class="css-ebv3qm e1j6iris0">
+                  <label>Aantal personen</label>
+                  <button
+                    type="button"
+                    class="chakra-button tooltip-button css-17p4kgf"
+                    onmouseover="hover(3)"
+                    onmouseleave="dis(3)"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      data-prefix="fas"
+                      data-icon="question-circle"
+                      class="svg-inline--fa fa-question-circle"
+                      role="img"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"
+                      ></path>
+                    </svg>
+                  </button>
+                  <p id="display3">
+                    Laag seizoen max. 6p.
+                    Midden & hoogseizoen max 10p.
+                  </p>
+                </div>
+              </div>
+              <select id="people" class="numerical withoutdollar">
+                <option value="1">1-6</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="result_div" id="result">
+          <div class="result_one r1">
+            <span class="APM_fees fee" id="total_per_basis">€00.00</span>
+            <span class="result_desc" id="per_basis_label">Totaal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="_button">
+        <div>
+          <button id="booking_button" class="booking_button" type="button">
+           Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="asset.js"></script>
+  </body>
+</html>
